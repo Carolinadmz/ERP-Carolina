@@ -1,0 +1,117 @@
+.sidebar-container {
+  position: relative;
+}
+
+.hamburger-button {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #333;
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hamburger-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.custom-sidebar {
+  background-color: #1a4b8e !important;
+  color: white;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-header h2 {
+  color: white;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.sidebar-menu-container {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Estilos para el menú de PrimeReact */
+.custom-sidebar .p-menu {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.custom-sidebar .p-menu .p-menuitem-link {
+  color: white !important;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.custom-sidebar .p-menu .p-menuitem-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.custom-sidebar .p-menu .p-menuitem-icon {
+  color: white !important;
+  margin-right: 0.75rem;
+}
+
+.custom-sidebar .p-menu .p-submenu-header {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: bold;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-avatar {
+  width: 3rem;
+  height: 3rem;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.user-email {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}

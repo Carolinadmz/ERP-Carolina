@@ -14,4 +14,3 @@ export default function Kpi4() {
         </div>
     )
 }
-        

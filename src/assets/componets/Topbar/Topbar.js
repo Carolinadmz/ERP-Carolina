@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Toolbar } from 'primereact/toolbar';
 import { Avatar } from 'primereact/avatar';
 import { Button } from 'primereact/button';
@@ -10,7 +10,8 @@ import './Topbar.css';
 export default function Topbar() {
     const { user, logout } = useAuth0();
     const [visible, setVisible] = useState(false);
-    const [userMenu, setUserMenu] = useState(null);
+    // Usar useRef en lugar de useState para el menú
+    const userMenu = useRef(null);
 
     const userMenuItems = [
         {
@@ -20,7 +21,6 @@ export default function Topbar() {
         }
     ];
 
-    // Elementos de menú simplificados - solo las opciones solicitadas
     const menuItems = [
         {
             label: 'Dashboard',
@@ -48,7 +48,6 @@ export default function Topbar() {
         }
     ];
 
-    // El menú hamburguesa ahora es parte del startContent
     const startContent = (
         <Button 
             icon="pi pi-bars" 
@@ -57,12 +56,11 @@ export default function Topbar() {
         />
     );
 
-    // Perfil de usuario con avatar clickeable para cerrar sesión
     const endContent = (
         <div className="flex align-items-center gap-2">
             <div 
                 className="user-profile"
-                onClick={(e) => userMenu.toggle(e)}
+                onClick={(e) => userMenu.current.toggle(e)}
             >
                 <Avatar 
                     image={user?.picture || `https://www.gravatar.com/avatar/${user?.email ? btoa(user.email) : '0'}?d=mp`} 
@@ -71,7 +69,7 @@ export default function Topbar() {
                 />
                 <span className="user-name">{user?.name || 'Usuario'}</span>
             </div>
-            <Menu model={userMenuItems} popup ref={(el) => setUserMenu(el)} />
+            <Menu model={userMenuItems} popup ref={userMenu} />
         </div>
     );
 
@@ -102,7 +100,6 @@ export default function Topbar() {
                     ))}
                 </div>
                 
-                {/* Perfil de usuario en la parte inferior del sidebar */}
                 <div className="sidebar-footer">
                     <Avatar 
                         image={user?.picture || `https://www.gravatar.com/avatar/${user?.email ? btoa(user.email) : '0'}?d=mp`}
@@ -118,3 +115,4 @@ export default function Topbar() {
         </>
     );
 }
+

@@ -17,7 +17,7 @@
 
 .dashboard-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     gap: 2rem;
 }
 
@@ -68,7 +68,6 @@
     padding: 1rem;
     background-color: #ffffff;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.03);
-    height: 300px; /* Altura fija para los gráficos */
 }
 
 .kpi-details {
@@ -102,26 +101,43 @@
     border-bottom: none !important;
 }
 
-  /* Estilos para los gráficos */
+/* Estilos para los gráficos */
 .p-chart {
     width: 100% !important;
     height: 300px !important;
 }
 
-  /* Estilos para los KPIs individuales */
+/* Estilos para los KPIs individuales */
 .kpi-clientes .p-card-title {
-    color: #36a2eb;
+    color: #36A2EB;
 }
 
 .kpi-ventas .p-card-title {
-    color: #4bc0c0;
+    color: #4BC0C0;
 }
 
 .kpi-gastos .p-card-title {
-    color: #ff6384;
+    color: #FF6384;
 }
 
 .kpi-empleados .p-card-title {
-    color: #9966ff;
+    color: #9966FF;
 }
 
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboard-container {
+        padding: 1rem;
+    }
+    
+    .kpi-card .p-card-title {
+        font-size: 1.25rem;
+    }
+    
+    .dashboard-title {
+        font-size: 1.5rem;
+    }
+}

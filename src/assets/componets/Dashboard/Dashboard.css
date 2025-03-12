@@ -17,7 +17,7 @@
 
 .dashboard-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 
@@ -125,62 +125,3 @@
     color: #9966ff;
 }
 
-  /* Mejoras de responsividad */
-@media (max-width: 1200px) {
-    .dashboard-grid {
-    grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 992px) {
-    .dashboard-grid {
-    grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .dashboard-container {
-    padding: 1rem;
-    }
-
-    .kpi-card .p-card-title {
-    font-size: 1.25rem;
-    }
-
-    .dashboard-title {
-    font-size: 1.5rem;
-    }
-
-    .kpi-chart {
-    height: 250px;
-    }
-}
-
-@media (max-width: 480px) {
-    .dashboard-container {
-    padding: 0.75rem;
-    margin-top: 60px;
-    }
-
-    .dashboard-title {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    }
-
-    .dashboard-grid {
-    gap: 1rem;
-    }
-
-    .kpi-card .p-card-title {
-    font-size: 1.1rem;
-    }
-
-    .kpi-card .p-card-subtitle {
-    font-size: 0.8rem;
-    }
-
-    .kpi-chart {
-    height: 200px;
-    padding: 0.5rem;
-    }
-}

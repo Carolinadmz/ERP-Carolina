@@ -73,14 +73,10 @@ const endContent = (
         onClick={() => setAboutMeVisible(true)}
         aria-label="About Me"
     />
-    <Tooltip target="#about-me-button" content="About Me" position="bottom" />
+    <Tooltip target="#about-me-button" content="Sobre Mí" position="bottom" />
 
     <div className="user-profile" onClick={(e) => userMenu.current.toggle(e)}>
-        <Avatar
-        image={user?.picture || `https://www.gravatar.com/avatar/${user?.email ? btoa(user.email) : "0"}?d=mp`}
-        shape="circle"
-        className="user-avatar"
-        />
+        <Avatar image={user?.picture || `/carolina-profile.jpg`} shape="circle" className="user-avatar" />
         <span className="user-name">{user?.name || "Usuario"}</span>
     </div>
     <Menu model={userMenuItems} popup ref={userMenu} />
@@ -107,11 +103,7 @@ return (
         </div>
 
         <div className="sidebar-footer">
-        <Avatar
-            image={user?.picture || `https://www.gravatar.com/avatar/${user?.email ? btoa(user.email) : "0"}?d=mp`}
-            shape="circle"
-            className="user-avatar"
-        />
+        <Avatar image={user?.picture || `/carolina-profile.jpg`} shape="circle" className="user-avatar" />
         <div className="user-info">
             <span className="user-name">{user?.name || "Usuario"}</span>
             <span className="user-email">{user?.email || "correo@ejemplo.com"}</span>
@@ -124,3 +116,4 @@ return (
     </>
 )
 }
+

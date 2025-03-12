@@ -1,44 +1,56 @@
 "use client"
 
 import { useState } from "react"
-import { Button, Navbar, Container, Nav, NavDropdown } from "react-bootstrap"
+import { Menubar } from "primereact/menubar"
+import { Button } from "primereact/button"
+import { Avatar } from "primereact/avatar"
+import { Tooltip } from "primereact/tooltip"
 import AboutMe from "./AboutMe"
+import "./Topbar.css"
 
 function Topbar({ user }) {
-const [aboutMeVisible, setAboutMeVisible] = useState(false)
+  const [aboutMeVisible, setAboutMeVisible] = useState(false)
 
-return (
+  const start = (
+    <div className="topbar-start">
+      <h2 className="app-logo">ERP Solutions</h2>
+    </div>
+  )
+
+  const end = (
+    <div className="topbar-end">
+      <Tooltip target=".about-me-button" position="bottom" />
+      <Button
+        icon="pi pi-user"
+        className="about-me-button p-button-rounded p-button-text"
+        onClick={() => setAboutMeVisible(true)}
+        data-pr-tooltip="Sobre Mí"
+        aria-label="Sobre Mí"
+      />
+
+      {user && (
+        <div className="user-profile">
+          <Avatar
+            image={user.picture || "/carolina-dominguez.jpg"}
+            shape="circle"
+            className="user-avatar"
+            onError={(e) => {
+              e.target.src = `https://www.gravatar.com/avatar/carolina@ejemplo.com?d=mp`
+            }}
+          />
+          <span className="user-name">{user.name || "Carolina Domínguez"}</span>
+        </div>
+      )}
+    </div>
+  )
+
+  return (
     <>
-    <Navbar bg="light" expand="lg">
-        <Container>
-        <Navbar.Brand href="#home">My App</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-            </NavDropdown>
-            </Nav>
-            {user ? (
-            <Button variant="outline-primary" onClick={() => setAboutMeVisible(true)}>
-                About Me
-            </Button>
-            ) : (
-            <Button variant="outline-secondary">Login</Button>
-            )}
-        </Navbar.Collapse>
-        </Container>
-    </Navbar>
+      <Menubar start={start} end={end} className="topbar" />
 
-    <AboutMe visible={aboutMeVisible} onHide={() => setAboutMeVisible(false)} />
+      <AboutMe visible={aboutMeVisible} onHide={() => setAboutMeVisible(false)} />
     </>
-)
+  )
 }
 
 export default Topbar

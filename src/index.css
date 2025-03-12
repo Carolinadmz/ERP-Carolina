@@ -12,36 +12,25 @@ code {
     monospace;
 }
 
-/* Small devices (mobile phones, 576px and down) */
-@media (max-width: 576px) {
+/* Media Queries para responsividad */
+
+/* Pantallas pequeñas (teléfonos) */
+@media (max-width: 600px) {
   body {
     font-size: 14px;
-    padding: 0.5rem;
   }
 }
 
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991px) {
-  body {
-    font-size: 15px;
-    padding: 1rem;
-  }
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199px) {
+/* Pantallas medianas (tabletas) */
+@media (min-width: 601px) and (max-width: 1024px) {
   body {
     font-size: 16px;
-    padding: 1.5rem;
   }
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+/* Pantallas grandes (escritorios) */
+@media (min-width: 1025px) {
   body {
-    font-size: 16px;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    font-size: 18px;
   }
 }

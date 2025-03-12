@@ -11,26 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-/* Media Queries para responsividad */
-
-/* Pantallas pequeñas (teléfonos) */
-@media (max-width: 600px) {
-  body {
-    font-size: 14px;
-  }
-}
-
-/* Pantallas medianas (tabletas) */
-@media (min-width: 601px) and (max-width: 1024px) {
-  body {
-    font-size: 16px;
-  }
-}
-
-/* Pantallas grandes (escritorios) */
-@media (min-width: 1025px) {
-  body {
-    font-size: 18px;
-  }
-}

@@ -25,10 +25,10 @@ useEffect(() => {
 const experiences = [
     {
     title: "Proyecto ERP Universitario",
-    company: "Universidad Tecnológica",
+    company: "USB",
     date: "2023 - Presente",
     description:
-        "Desarrollo de un sistema ERP para la gestión de recursos universitarios utilizando React, Node.js y bases de datos SQL.",
+        "Desarrollo de un sistema ERP",
     icon: "pi pi-code",
     color: "#1a4b8e",
     },
@@ -44,7 +44,7 @@ const experiences = [
     {
     title: "Proyecto Académico",
     company: "Facultad de Negocios",
-    date: "2021 - 2022",
+    date: "2023 - 2024",
     description:
         "Desarrollo de un sistema de análisis de datos para pequeñas empresas como parte del proyecto final de la materia de Sistemas de Información.",
     icon: "pi pi-chart-bar",
@@ -53,12 +53,12 @@ const experiences = [
 ]
 
 const skills = [
-    { name: "React", level: 85, icon: "pi pi-code" },
-    { name: "JavaScript", level: 80, icon: "pi pi-code" },
-    { name: "Node.js", level: 75, icon: "pi pi-server" },
-    { name: "SQL", level: 70, icon: "pi pi-database" },
-    { name: "HTML/CSS", level: 85, icon: "pi pi-file-code" },
-    { name: "Análisis de Datos", level: 80, icon: "pi pi-chart-bar" },
+    { name: "React", level: 60, icon: "pi pi-code" },
+    { name: "JavaScript", level: 60, icon: "pi pi-code" },
+    { name: "Node.js", level: 50, icon: "pi pi-server" },
+    { name: "SQL", level: 60, icon: "pi pi-database" },
+    { name: "HTML/CSS", level: 60, icon: "pi pi-file-code" },
+    { name: "Análisis de Datos", level: 70, icon: "pi pi-chart-bar" },
     { name: "Gestión de Proyectos", level: 75, icon: "pi pi-briefcase" },
 ]
 
@@ -95,8 +95,8 @@ return (
         <section className="about-section">
         <h3>Sobre Mí</h3>
         <p>
-            Soy estudiante de la carrera de Tecnologías de la Información en los Negocios, actualmente cursando el 6to
-            semestre. Me apasiona el desarrollo de soluciones tecnológicas que resuelvan problemas reales en el ámbito
+            Soy estudiante de la carrera de Tecnologías de la Información en los Negocios, actualmente cursando el 5to
+            cuatrimestre. Me apasiona el desarrollo de soluciones tecnológicas que resuelvan problemas reales en el ámbito
             empresarial.
         </p>
         <p>
@@ -119,8 +119,8 @@ return (
             </div>
             <div className="education-details">
                 <h4>Licenciatura en Tecnologías de la Información en los Negocios</h4>
-                <h5>Universidad Tecnológica Nacional</h5>
-                <p className="education-date">2021 - Presente</p>
+                <h5>Universidad Simón Bolívar</h5>
+                <p className="education-date">2023 - Presente</p>
                 <div className="education-badges">
                 <Badge value="Promedio: 9.2" severity="success" className="education-badge" />
                 <Badge value="6to Semestre" severity="info" className="education-badge" />
@@ -139,7 +139,7 @@ return (
             <div className="education-details">
                 <h4>Certificación en Desarrollo Web</h4>
                 <h5>Plataforma Educativa Online</h5>
-                <p className="education-date">2022</p>
+                <p className="education-date">2023</p>
             </div>
             </div>
         </Card>

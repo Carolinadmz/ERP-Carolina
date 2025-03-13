@@ -53,20 +53,20 @@ const experiences = [
 ]
 
 const skills = [
-    { name: "React", level: 85 },
-    { name: "JavaScript", level: 80 },
-    { name: "Node.js", level: 75 },
-    { name: "SQL", level: 70 },
-    { name: "HTML/CSS", level: 85 },
-    { name: "Análisis de Datos", level: 80 },
-    { name: "Gestión de Proyectos", level: 75 },
+    { name: "React", level: 85, icon: "pi pi-code" },
+    { name: "JavaScript", level: 80, icon: "pi pi-code" },
+    { name: "Node.js", level: 75, icon: "pi pi-server" },
+    { name: "SQL", level: 70, icon: "pi pi-database" },
+    { name: "HTML/CSS", level: 85, icon: "pi pi-file-code" },
+    { name: "Análisis de Datos", level: 80, icon: "pi pi-chart-bar" },
+    { name: "Gestión de Proyectos", level: 75, icon: "pi pi-briefcase" },
 ]
 
 const customHeader = (
     <div className="about-me-header">
     <div className="profile-image-container">
         <img
-          src="/carolina-profile.jpg" // Imagen fija
+          src="/carolina-profile.jpg" // Actualizado a .jpeg
         alt="Carolina Domínguez"
         className="profile-image"
         onError={(e) => {
@@ -150,9 +150,13 @@ return (
         <div className="skills-container">
             {skills.map((skill, index) => (
             <div key={index} className="skill-item">
+                <div className="skill-header">
+                <i className={skill.icon}></i>
                 <span className="skill-name">{skill.name}</span>
+                <span className="skill-percentage">{skill.level}%</span>
+                </div>
                 <div className="skill-bar-container">
-                <div className="skill-bar" data-width={skill.level} style={{ width: "0%" }} />
+                <div className="skill-bar" style={{ width: visible ? `${skill.level}%` : "0%" }} />
                 </div>
             </div>
             ))}
@@ -206,3 +210,4 @@ return (
     </Dialog>
 )
 }
+
